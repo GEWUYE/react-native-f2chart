@@ -1,5 +1,6 @@
 import React, { PureComponent, createRef } from 'react';
 import { StyleSheet, Platform } from 'react-native';
+import WebView from 'react-native-webview';
 
 const changeData = data => `chart.changeData(${JSON.stringify(data)});
 `;
@@ -20,7 +21,6 @@ type Props = {
   isPie?: Boolean,
   onChange?: Function,
   scriptFun?: Function,
-  webView?: any
 };
 
 export default class Chart extends PureComponent<Props> {
@@ -64,7 +64,6 @@ export default class Chart extends PureComponent<Props> {
 
   render() {
     const {
-      webView: WebView,
       data = [],
       onChange,
       initScript,
